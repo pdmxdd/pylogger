@@ -3,12 +3,12 @@ from pynput import keyboard
 
 def on_press(key):
     try:
-        print('alphanumeric key {0} pressed'.format(key.char))
+        print(key.char)
     except AttributeError:
-        print('special key {0} pressed'.format(key))
+        pass 
 
 if __name__ == "__main__":
     listener = keyboard.Listener(on_press=on_press)
     listener.start()
-    sleep(30)
+    sleep(10)
     listener.stop()
