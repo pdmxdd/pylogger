@@ -1,14 +1,21 @@
 from time import sleep
 from pynput import keyboard
 
+log = []
+
 def on_press(key):
+    special_lookup = {
+        "Key.space": " "    
+    }
     try:
-        print(key.char)
+        log.append(key.char)
     except AttributeError:
-        pass 
+        if str(key) in special_lookup.keys():
+            log.append(special_lookup[str(key)])
 
 if __name__ == "__main__":
     listener = keyboard.Listener(on_press=on_press)
     listener.start()
     sleep(10)
     listener.stop()
+    print(log)
