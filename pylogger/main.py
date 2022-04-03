@@ -19,4 +19,4 @@ if __name__ == "__main__":
     listener.start()
     sleep(10)
     listener.stop()
-    print(log)
+    print("".join(log))
