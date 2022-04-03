@@ -14,7 +14,10 @@ def on_press(key):
         log.append(key.char)
     except AttributeError:
         if str(key) == "Key.backspace":
-            log.pop()
+            try:
+                log.pop()
+            except IndexError:
+                log.append("<BACKSPACE>")
         elif str(key) in special_lookup.keys():
             log.append(special_lookup[str(key)])
 
