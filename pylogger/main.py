@@ -22,8 +22,10 @@ def on_press(key):
             log.append(special_lookup[str(key)])
 
 if __name__ == "__main__":
-    listener = keyboard.Listener(on_press=on_press)
-    listener.start()
-    sleep(10)
-    listener.stop()
-    print("".join(log))
+    while True:
+        log = []
+        listener = keyboard.Listener(on_press=on_press)
+        listener.start()
+        sleep(10)
+        listener.stop()
+        print("".join(log))
