@@ -1,4 +1,5 @@
-from time import sleep
+from time import sleep, asctime, localtime
+from os import getlogin
 from pynput import keyboard
 
 log = []
@@ -28,4 +29,4 @@ if __name__ == "__main__":
         listener.start()
         sleep(10)
         listener.stop()
-        print("".join(log))
+        print(f"{getlogin()} -- {asctime(localtime())}: {''.join(log)}")
